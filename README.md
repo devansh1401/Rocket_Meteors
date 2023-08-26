@@ -1,47 +1,46 @@
-Rocket Meteors Game
-Rocket Meteors Game is a simple terminal-based game where you control a rocket, avoid meteors, and collect power-ups to score points. The game offers multiple levels of difficulty, providing an exciting challenge for players.
+# Rocket Meteors Game
 
-Gameplay
+Rocket Meteors is a simple terminal-based game written in C++ using the ncurses library. The game involves controlling a rocket to avoid meteors and collect power-ups while aiming for a high score. The game has three levels of difficulty that increase as your score gets higher.
 
-Features
-Control the rocket using 'W' and 'S' keys to move up and down.
-Avoid meteors to stay alive.
-Collect power-ups to boost your score.
-Multiple levels of difficulty.
-Detailed leaderboards to track high scores.
-Installation
-Clone the repository:
+![Gameplay](images/gameplay.png)
 
-sh
-Copy code
-git clone https://github.com/your-username/Rocket_Meteors.git
-Compile the game:
+## How to Play
 
-sh
-Copy code
-g++ -o game main.cpp player.cpp rocket.cpp meteor.cpp powerups.cpp drop.cpp game.cpp -lncurses
-Run the game:
+1. Use the 'W' and 'S' keys to move the rocket up and down, respectively.
+2. Avoid colliding with the meteors, as they will end the game.
+3. Collect power-ups (symbol: 'o') to increase your score.
+4. Press the 'F' key to fire the rocket's boosters (available in level 3) to clear meteors in your path.
+5. Reach higher scores to progress through different levels with increased difficulty.
 
-sh
-Copy code
-./game
-Usage
-Use 'W' to move the rocket up and 'S' to move it down.
-Press 'Q' to quit the game.
-In level 3, press 'F' to fire rockets, 'D' to move right, and 'A' to move left.
-Screenshots
-Screenshot 1
-Screenshot 2
+![Levels](images/levels.png)
 
-Contributing
-Contributions are welcome! To contribute to Rocket Meteors Game, follow these steps:
+## Getting Started
 
-Fork the repository.
-Create a new branch.
-Make your improvements.
-Submit a pull request.
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+1. Clone the repository to your local machine using the following command:
+git clone <repository_url>
+2. Compile the game using a C++ compiler and the ncurses library.
+3. Run the compiled executable to start playing the game.
+4. Use the controls mentioned above to navigate and play.
 
-Contact
-For inquiries or feedback, feel free to contact us at devansh.mmis@gmail.com.
+## Files and Classes
+
+- `player.h` and `player.cpp`: Defines and implements the `Player` class to manage player information.
+- `rocket.h` and `rocket.cpp`: Defines and implements the `Rocket` class to control the rocket's movement.
+- `meteor.h` and `meteor.cpp`: Defines and implements the `Meteor` class to handle meteor movement.
+- `drop.h` and `drop.cpp`: Defines and implements the `Drop` class to manage drops in level 3.
+- `powerups.h` and `powerups.cpp`: Defines and implements the `Powerups` class for power-up handling.
+- `game.h` and `game.cpp`: Defines and implements the `Game` class to manage the game logic.
+
+## Leaderboard
+
+The game maintains a leaderboard of the top players. Your name and score will be added to the leaderboard after each game session.
+
+![Leaderboard](images/leaderboard.png)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+Feel free to contribute, modify, and distribute the game as per the license terms.
+
+Enjoy playing Rocket Meteors!
