@@ -1,2 +1,2 @@
-Rocket Meteors Game
+#Rocket Meteors Game
 Rocket Meteors Game is a simple terminal-based game where you control a rocket, avoid meteors, and collect power-ups to score points. The game offers multiple levels of difficulty, providing an exciting challenge for players.
