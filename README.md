@@ -6,8 +6,6 @@ Rocket Meteors is a terminal-based game written in C++ using the ncurses library
 - [Features](#features)
 - [Installation](#installation)
 - [How to Play](#how-to-play)
-- [Controls](#controls)
-- [Screenshots](#screenshots)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -29,6 +27,18 @@ Navigate to the project directory:
 ```sh
 cd Rocket_Meteors
 ```
+``` sh
+cd Game/src
+```
+Compile the game using the following command:
+``` sh
+g++ -o RocketMeteor RocketMeteor.cpp -lncurses
+```
+#### Run the Game
+After compiling, run the game:
+``` sh
+./RocketMeteor
+```
 
 ## How To Play!
 1. Use the 'W' and 'S' keys to move the rocket up and down, respectively.
@@ -44,3 +54,7 @@ cd Rocket_Meteors
 
 ## Contributing
 Contributions are welcome! If you find a bug or have an idea for an improvement, feel free to open an issue or submit a pull request.
+
+## License
+This project is licensed under the MIT License.
+
