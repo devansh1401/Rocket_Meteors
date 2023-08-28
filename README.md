@@ -1,4 +1,4 @@
-# Rocket Game
+# Rocket & Meteors
 
 Rocket Meteors is a terminal-based game written in C++ using the ncurses library. The game involves controlling a rocket to avoid meteors and collect power-ups while aiming for a high score. The game has three levels of difficulty that increase as your score gets higher.
 
