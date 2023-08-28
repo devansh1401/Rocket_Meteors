@@ -38,7 +38,9 @@ cd Rocket_Meteors
 5. Reach higher scores to progress through different levels with increased difficulty.
 
 ## Some COOL🚀🚀 Screenshots!
-![Alt Text](images/)
+
+![This is Level 2](images/Screenshot%202023-08-27%20at%207.55.18%20PM.png)
+
 
 ## Contributing
 Contributions are welcome! If you find a bug or have an idea for an improvement, feel free to open an issue or submit a pull request.
