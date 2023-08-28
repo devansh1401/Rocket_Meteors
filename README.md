@@ -12,7 +12,7 @@ Rocket Meteors is a simple terminal-based game written in C++ using the ncurses 
 4. Press the 'F' key to fire the rocket's boosters (available in level 3) to clear meteors in your path.
 5. Reach higher scores to progress through different levels with increased difficulty.
 
-![Levels](images/levels.png)
+![Levels2](images/Screenshot 2023-08-27 at 7.55.18 PM.png)
 
 ## Getting Started
 
