@@ -49,6 +49,7 @@ After compiling, run the game:
 
 ## Some COOL🚀🚀 Screenshots!
 
+![Screenshot](images/Screenshot%202023-08-28%20at%2011.51.21%20AM.png)
 ![This is Level 2](images/Screenshot%202023-08-27%20at%207.55.18%20PM.png)
 
 
