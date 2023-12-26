@@ -7,7 +7,7 @@
 #include <sstream>
 #include <vector>
 #include <fstream>
-#include<iomanip>
+#include <iomanip>
 
 using namespace std;
 
@@ -365,15 +365,23 @@ public:
         a = b;
         b = temp;
     }
-    void savePlayerInfo(const Player &player)
+   void savePlayerInfo(const Player &player)
+{
+    FILE *file = fopen("leaderboard.txt", "a");
+    if (file != NULL)
     {
-        FILE *file = fopen("leaderboard.txt", "a");
-        if (file != NULL)
+        if (fprintf(file, "%s %d\n", player.getName().c_str(), player.getScore()) < 0)
         {
-            fprintf(file, "%s %d\n", player.getName().c_str(), player.getScore());
-            fclose(file);
+            printw("Error: Unable to save player information to leaderboard file.\n");
         }
+        fclose(file);
     }
+    else
+    {
+        printw("Error: Unable to open leaderboard file for writing.\n");
+    }
+}
+
 
     vector<Player> Leaderboard;
 
@@ -429,7 +437,6 @@ public:
 
 cout << LeaderboardArt;
 
-// Add some spacing
 cout << endl ;
 
 // Draw a box around the leaderboard
