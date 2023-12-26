@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <cstdio>
 #include <ncurses.h>
@@ -7,14 +6,14 @@
 #include <string>
 #include <sstream>
 #include <vector>
-
 #include <fstream>
+#include<iomanip>
 
 using namespace std;
 
 string currentplayerName;
-const int screen_width = 80;
-const int screen_height = 20;
+const int screen_width = 81;
+const int screen_height = 30;
 const char rocket_symbol = '>';
 const char meteor1_symbol = '#';
 const char powerup_symbol = 'o';
@@ -122,7 +121,7 @@ public:
             y = screen_height - 2;
         draw2();
     }
-
+    
     void moveRight()
     {
         clear();
@@ -428,15 +427,32 @@ public:
                                 "           _.-'``                    ``'-._\n"
                                 "         -'                                '-\n";
 
-        cout << LeaderboardArt;
-        cout << "               LEADERBOARD" << endl;
-        cout << "              ===================" << endl;
+cout << LeaderboardArt;
 
-        for (size_t i = 0; i < 10; ++i)
-        {
-            cout << i + 1 << ". " << Leaderboard[i].getName() << "  " << Leaderboard[i].getScore() << endl;
-        }
+// Add some spacing
+cout << endl ;
+
+// Draw a box around the leaderboard
+cout << setw(54) << setfill('*') << "" << setfill(' ') << endl;
+cout << "*              🚀  L E A D E R B O A R D  🚀              *" << endl;
+cout << setw(54) << setfill('*') << "" << setfill(' ') << endl;
+
+// Display column headers
+cout << left << setw(9) << "* Rank" << setw(20) << "| Name" << setw(15) << "| Score *" << endl;
+cout << setw(54) << setfill('-') << "" << setfill(' ') << endl;
+
+// Display leaderboard entries
+for (size_t i = 0; i < 10; ++i)
+{
+    cout << left << "* " << setw(5) << i + 1 << "| " << setw(19) << Leaderboard[i].getName() << "| " << setw(14) << Leaderboard[i].getScore() << " *" << endl;
+}
+
+// Draw a box around the leaderboard
+cout << setw(54) << setfill('*') << "" << setfill(' ') << endl;
+
+
     }
+    
 
     void run()
     {
@@ -532,19 +548,19 @@ public:
             if (score < 500)
             {
                 drawGame1();
-                napms(100);
+                napms(70);
             }
             if (score >= 500 && score < 1000)
             {
                 level = 2;
                 drawGame2();
-                napms(50);
+                napms(30);
             }
             if (score >= 1000)
             {
                 level = 3;
                 drawGame3();
-                napms(30);
+                napms(17);
             }
         }
 
