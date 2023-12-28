@@ -28,7 +28,6 @@
 #include <iomanip>
 // C++ Input/Output Manipulators library header, providing manipulators like setw for formatted output.
 
-
 using namespace std;
 
 string currentplayerName;
@@ -141,7 +140,7 @@ public:
             y = screen_height - 2;
         draw2();
     }
-    
+
     void moveRight()
     {
         clear();
@@ -385,23 +384,22 @@ public:
         a = b;
         b = temp;
     }
-   void savePlayerInfo(const Player &player)
-{
-    FILE *file = fopen("leaderboard.txt", "a");
-    if (file != NULL)
+    void savePlayerInfo(const Player &player)
     {
-        if (fprintf(file, "%s %d\n", player.getName().c_str(), player.getScore()) < 0)
+        FILE *file = fopen("leaderboard.txt", "a");
+        if (file != NULL)
         {
-            printw("Error: Unable to save player information to leaderboard file.\n");
+            if (fprintf(file, "%s %d\n", player.getName().c_str(), player.getScore()) < 0)
+            {
+                printw("Error: Unable to save player information to leaderboard file.\n");
+            }
+            fclose(file);
         }
-        fclose(file);
+        else
+        {
+            printw("Error: Unable to open leaderboard file for writing.\n");
+        }
     }
-    else
-    {
-        printw("Error: Unable to open leaderboard file for writing.\n");
-    }
-}
-
 
     vector<Player> Leaderboard;
 
@@ -455,46 +453,37 @@ public:
                                 "           _.-'``                    ``'-._\n"
                                 "         -'                                '-\n";
 
-cout << LeaderboardArt;
+        cout << LeaderboardArt;
 
-cout << endl ;
+        cout << endl;
 
-// Draw a box around the leaderboard
-cout << setw(54) << setfill('*') << "" << setfill(' ') << endl;
-cout << "*              🚀  L E A D E R B O A R D  🚀              *" << endl;
-cout << setw(54) << setfill('*') << "" << setfill(' ') << endl;
+        cout << setw(54) << setfill('*') << "" << setfill(' ') << endl;
+        cout << "*              🚀  L E A D E R B O A R D  🚀              *" << endl;
+        cout << setw(54) << setfill('*') << "" << setfill(' ') << endl;
 
-// Display column headers
-cout << left << setw(9) << "* Rank" << setw(20) << "| Name" << setw(15) << "| Score *" << endl;
-cout << setw(54) << setfill('-') << "" << setfill(' ') << endl;
+        cout << left << setw(9) << "* Rank" << setw(20) << "| Name" << setw(15) << "| Score *" << endl;
+        cout << setw(54) << setfill('-') << "" << setfill(' ') << endl;
 
-// Display leaderboard entries
-for (size_t i = 0; i < 10; ++i)
-{
-    cout << left << "* " << setw(5) << i + 1 << "| " << setw(19) << Leaderboard[i].getName() << "| " << setw(14) << Leaderboard[i].getScore() << " *" << endl;
-}
-
-// Draw a box around the leaderboard
-cout << setw(54) << setfill('*') << "" << setfill(' ') << endl;
-
-
+        for (size_t i = 0; i < 10; ++i)
+        {
+            cout << left << "* " << setw(5) << i + 1 << "| " << setw(19) << Leaderboard[i].getName() << "| " << setw(14) << Leaderboard[i].getScore() << " *" << endl;
+        }
+        cout << setw(54) << setfill('*') << "" << setfill(' ') << endl;
     }
-    
 
     void run()
     {
-initscr(); // Initialize the screen and set up the curses library
+        initscr(); // Initialize the screen and set up the curses library
 
-noecho(); // Disable automatic echoing of characters typed by the user
+        noecho(); // Disable automatic echoing of characters typed by the user
 
-curs_set(0); // Make the cursor invisible
+        curs_set(0); // Make the cursor invisible
 
-keypad(stdscr, true); // Enable special keys to be captured, such as function keys and arrow keys
+        keypad(stdscr, true); // Enable special keys to be captured, such as function keys and arrow keys
 
-nodelay(stdscr, true); // Enable non-blocking input, allowing the program to continue without waiting for user input
+        nodelay(stdscr, true); // Enable non-blocking input, allowing the program to continue without waiting for user input
 
-srand(time(NULL)); // Seed the random number generator with the current time for varied gameplay
-
+        srand(time(NULL)); // Seed the random number generator with the current time for varied gameplay
 
         while (!gameOver)
         {
