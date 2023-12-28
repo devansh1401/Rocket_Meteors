@@ -1,13 +1,33 @@
 #include <iostream>
+// Standard Input/Output stream header for handling input and output operations.
+
 #include <cstdio>
+// C Standard Input/Output library header, providing functions for reading and writing files.
+
 #include <ncurses.h>
+// Ncurses library header for creating text-based user interfaces, used for game UI in this code.
+
 #include <cstdlib>
+// C Standard General Utilities library header, providing general-purpose functions like memory allocation and random number generation.
+
 #include <ctime>
+// C Time library header, used for time-related functions, often utilized for seeding random number generators.
+
 #include <string>
+// C++ Standard String library header, used for string manipulation operations.
+
 #include <sstream>
+// C++ String Stream library header, used for parsing strings, particularly helpful when dealing with file input.
+
 #include <vector>
+// C++ Standard Template Library (STL) header for the vector container, used for dynamic arrays of elements.
+
 #include <fstream>
+// C++ File Stream library header, used for reading and writing to files.
+
 #include <iomanip>
+// C++ Input/Output Manipulators library header, providing manipulators like setw for formatted output.
+
 
 using namespace std;
 
@@ -463,13 +483,18 @@ cout << setw(54) << setfill('*') << "" << setfill(' ') << endl;
 
     void run()
     {
-        initscr();
-        noecho();
-        curs_set(0);
-        keypad(stdscr, true);
-        nodelay(stdscr, true);
+initscr(); // Initialize the screen and set up the curses library
 
-        srand(time(NULL));
+noecho(); // Disable automatic echoing of characters typed by the user
+
+curs_set(0); // Make the cursor invisible
+
+keypad(stdscr, true); // Enable special keys to be captured, such as function keys and arrow keys
+
+nodelay(stdscr, true); // Enable non-blocking input, allowing the program to continue without waiting for user input
+
+srand(time(NULL)); // Seed the random number generator with the current time for varied gameplay
+
 
         while (!gameOver)
         {
@@ -729,7 +754,7 @@ int main()
     int n;
     Game game;
 
-    cout << "ENTER your  NICKNAME(only characters and numbers): ";
+    cout << " 👾 ENTER your COSMIC CODENAME (only characters and numbers) 👾 : ";
     cin >> currentplayerName;
 
     cout << endl
